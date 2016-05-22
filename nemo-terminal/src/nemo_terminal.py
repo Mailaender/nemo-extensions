@@ -84,7 +84,7 @@ class NemoTerminal(object):
         self._path = self._uri_to_path(uri)
         #Term
         self.shell_pid = -1
-        self.term = Vte.Terminal()
+        self.term = Vte.Terminal(audible_bell=False)
 
         self.shell_pid = self.term.fork_command_full(Vte.PtyFlags.DEFAULT,
                 self._path, [terminal_or_default()], None,
